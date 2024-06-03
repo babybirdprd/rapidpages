@@ -4,8 +4,9 @@ import { escapeRegExp } from "~/utils/utils";
 
 const openai = new OpenAI({
   apiKey: env.OPENAI_API_KEY,
+  baseURL: env.OPENAI_BASE_URL,
 });
-const openaiModelName = "gpt-4-0613";
+const openaiModelName = "openai/gpt-4o";
 
 const extractFirstCodeBlock = (input: string) => {
   const pattern = /```(\w+)?\n([\s\S]+?)\n```/g;
@@ -102,7 +103,7 @@ export async function reviseComponent(prompt: string, code: string) {
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
-    max_tokens: 2000,
+    max_tokens: 4000,
     n: 1,
   });
 
