@@ -20,6 +20,7 @@ export const env = createEnv({
       ),
 
     OPENAI_API_KEY: z.string(),
+    OPENAI_BASE_URL: z.string(),
 
     NEXTAUTH_SECRET:
       process.env.NODE_ENV === "production"
@@ -59,6 +60,7 @@ export const env = createEnv({
     DATABASE_URL: process.env.DATABASE_URL,
 
     OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+    OPENAI_BASE_URL: process.env.OPENAI_BASE_URL,
 
     NEXT_PUBLIC_URL: process.env.NEXT_PUBLIC_URL,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
